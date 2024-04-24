@@ -61,7 +61,7 @@ export function checkUserVerifyAdmin(verify: string) {
 export async function getUserResetPasswordUrl(username: string) {
   const sign = getUserResetPassword(username)
   const config = await getCacheConfig()
-  return `${config.siteConfig.siteDomain}/#/chat/?verifyresetpassword=${sign}`
+  return `http://${config.siteConfig.siteDomain}/#/chat/?verifyresetpassword=${sign}`
 }
 
 function getUserResetPassword(username: string) {

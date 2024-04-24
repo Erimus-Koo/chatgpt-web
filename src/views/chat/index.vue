@@ -683,14 +683,14 @@ onUnmounted(() => {
                 <IconPrompt class="w-[20px] m-auto" />
               </span>
             </HoverButton>
-            <HoverButton v-if="!isMobile" :tooltip="usingContext ? '点击停止包含上下文' : '点击开启包含上下文'" :class="{ 'text-[#4b9e5f]': usingContext, 'text-[#a8071a]': !usingContext }" @click="handleToggleUsingContext">
+            <HoverButton v-if="!isMobile" :tooltip="usingContext ? '点击停止包含上下文 💸上下文太长会产生大量费用的浪费哦～' : '点击开启包含上下文'" :class="{ 'text-[#4b9e5f]': usingContext, 'text-[#a8071a]': !usingContext }" @click="handleToggleUsingContext">
               <span class="text-xl">
                 <SvgIcon icon="ri:chat-history-line" />
               </span>
-              <span style="margin-left:.25em">{{ usingContext ? '包含上下文' : '不含上下文' }}</span>
+              <span style="margin-left:.25em">{{ usingContext ? '包含上下文（请定期点击或新建对话）' : '不含上下文' }}</span>
             </HoverButton>
             <NSelect
-              style="width: 250px"
+              style="width: 250px;display:none;"
               :value="currentChatModel"
               :options="authStore.session?.chatModels"
               :disabled="!!authStore.session?.auth && !authStore.token"

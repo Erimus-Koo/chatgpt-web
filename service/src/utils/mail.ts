@@ -68,6 +68,9 @@ async function sendMail(toMail: string, subject: string, html: string, config: M
       user: config.smtpUserName,
       pass: config.smtpPassword,
     },
+    tls: {
+      rejectUnauthorized: false,
+    },
   })
   const info = await transporter.sendMail(mailOptions)
   return info.messageId

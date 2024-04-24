@@ -30,6 +30,7 @@ export default defineConfig((env) => {
         '@': path.resolve(process.cwd(), 'src'),
       },
     },
+    base: './',
     plugins: setupPlugins(viteEnv),
     server: {
       host: '0.0.0.0',
